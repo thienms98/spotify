@@ -1,3 +1,61 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 241px;
+    height: 100%;
+    padding-bottom: 90px;
+    background: #000;
+    color: #fff;
+    position: fixed;
+}
+
 .logo{
-    width: 300px;
+    margin: 24px 0 18px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    img{
+        color: #fff;
+        width: 131px;
+    }
+}
+
+.nav-group{
+    padding: 0 8px;
+    margin-bottom: 24px;
+}
+.link-item{
+    padding: 0 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+.nav-item{
+    height: 40px;
+    
+    .name{
+        color: #b3b3b3;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    &.active .name{
+        color: #fff;
+    }
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        color: #b3b3b3;
+    }
 }

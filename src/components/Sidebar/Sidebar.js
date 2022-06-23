@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
 import images from '~/assets/images';
@@ -46,10 +47,12 @@ function List({ list, clickHandler, currentActive = -1 }) {
                             clickHandler(index);
                         }}
                     >
-                        <div className={cx('icon')}>
-                            <img src={currentActive === index ? item.activeIcon : item.icon} alt={item.name} />
-                        </div>
-                        <div className={cx('name')}>{item.name}</div>
+                        <Link to={'/'} className={cx('link-item')}>
+                            <div className={cx('icon')}>
+                                <img src={currentActive === index ? item.activeIcon : item.icon} alt={item.name} />
+                            </div>
+                            <div className={cx('name')}>{item.name}</div>
+                        </Link>
                     </div>
                 );
             })}
