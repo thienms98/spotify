@@ -12,7 +12,11 @@ function App() {
         <div className={cx('app')}>
             <Sidebar />
             <div className={cx('mplayer')}>
-                <MPlayer />
+                <MPlayer
+                    url={
+                        'https://p.scdn.co/mp3-preview/5a2275b50d2ea67268d5f4ef2f1e3ad4c6722bb9?cid=f6a40776580943a7bc5173125a1e8832'
+                    }
+                />
             </div>
             <div className={cx('content')}>
                 <Routes>
