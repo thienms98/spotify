@@ -17,3 +17,7 @@ a{
     text-decoration: none;
     color: #fff;
 }
+
+input:focus {
+    outline: none; 
+}

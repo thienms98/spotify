@@ -15,7 +15,7 @@ function HomePage() {
                                 <div className={cx('bg')} style={{ '--bg': item.background }}></div>
                                 <span className={cx('title')}>{item.title}</span>
                                 <div className={cx('img')}>
-                                    <img src={item.url} alt={item.title} />
+                                    <img src={item.url} alt={item.title} loading={'lazy'} />
                                 </div>
                             </div>
                         </div>

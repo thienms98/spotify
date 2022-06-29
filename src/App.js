@@ -1,16 +1,21 @@
 import classNames from 'classnames/bind';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage } from '~/pages/HomePage';
 import { Sidebar } from '~/components/Sidebar';
 import styles from './App.module.scss';
 import { MPlayer } from './components/MPlayer';
+import { Header } from './components/Header';
+import { SearchBar } from './components/SearchBar';
 
 const cx = classNames.bind(styles);
 
 function App() {
+    const location = useLocation();
+
     return (
         <div className={cx('app')}>
             <Sidebar />
+            <Header>{location.pathname.includes('/search') ? <SearchBar /> : ''}</Header>
             <div className={cx('mplayer')}>
                 <MPlayer
                     url={
@@ -21,6 +26,9 @@ function App() {
             <div className={cx('content')}>
                 <Routes>
                     <Route path={'/'} element={<HomePage />}></Route>
+                    <Route path={'/search/:slug'} element={<HomePage />}></Route>
+                    <Route path={'/search'} element={<HomePage />}></Route>
+                    <Route path={'*'} element={<div>Feature is under development</div>}></Route>
                 </Routes>
             </div>
         </div>

@@ -47,7 +47,7 @@ function List({ list, clickHandler, currentActive = -1 }) {
                             clickHandler(index);
                         }}
                     >
-                        <Link to={'/'} className={cx('link-item')}>
+                        <Link to={item.path} className={cx('link-item')}>
                             <div className={cx('icon')}>
                                 <img src={currentActive === index ? item.activeIcon : item.icon} alt={item.name} />
                             </div>
